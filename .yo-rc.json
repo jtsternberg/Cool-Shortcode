@@ -1,0 +1,17 @@
+{
+  "generator-plugin-wp": {
+    "name": "Cool Shortcode",
+    "homepage": "http://webdevstudios.com",
+    "description": "Built with WDS-Shortcodes (and Shortcode_Button), this plugin demonstrates the capabilites of those libraries.",
+    "version": "0.0.0",
+    "author": "WebDevStudios",
+    "authoremail": "contact@webdevstudios.com",
+    "authorurl": "http://webdevstudios.com",
+    "license": "GPLv2",
+    "slug": "cool-shortcode",
+    "classname": "Cool_Shortcode",
+    "classprefix": "CS_",
+    "prefix": "cool_shortcode",
+    "year": 2016
+  }
+}

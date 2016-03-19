@@ -1,0 +1,24 @@
+{
+	"name": "cool-shortcode",
+	"title": "Cool Shortcode",
+	"version": "0.0.0",
+	"description": "Built with WDS-Shortcodes (and Shortcode_Button), this plugin demonstrates the capabilites of those libraries.",
+	"author": {
+		"name": "WebDevStudios",
+		"url": "http://webdevstudios.com"
+	},
+	"license": "GPLv2",
+	"devDependencies": {
+		"grunt": "latest",
+		"grunt-contrib-watch": "latest",
+		"grunt-wp-i18n": "latest",
+		"grunt-contrib-copy": "latest",
+		"grunt-text-replace": "latest",
+		"load-grunt-tasks": "latest"
+	},
+	"scripts": {
+		"test": "dockunit",
+		"preversion": "npm test",
+		"version": "grunt version && git add ."
+	}
+}

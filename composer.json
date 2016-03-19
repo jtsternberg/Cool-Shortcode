@@ -1,0 +1,33 @@
+{
+	"name": "cool-shortcode",
+	"description": "Built with WDS-Shortcodes (and Shortcode_Button), this plugin demonstrates the capabilites of those libraries.",
+	"keywords": ["wordpress", "plugin", "generator-plugin-wp"],
+	"homepage": "http://webdevstudios.com",
+	"license": "GPLv2",
+	"authors": [
+	{
+		"name": "WebDevStudios",
+		"homepage": "http://webdevstudios.com"
+	}
+	],
+	"minimum-stability": "dev",
+	"type": "wordpress-plugin",
+	"autoload": {
+		"classmap": ["cool-shortcode.php", "includes/"]
+	},
+	"require": {
+		"php": ">=5.2",
+		"xrstf/composer-php52": "1.*"
+	},
+	"scripts": {
+        "post-install-cmd": [
+            "xrstf\\Composer52\\Generator::onPostInstallCmd"
+        ],
+        "post-update-cmd": [
+            "xrstf\\Composer52\\Generator::onPostInstallCmd"
+        ],
+        "post-autoload-dump": [
+            "xrstf\\Composer52\\Generator::onPostInstallCmd"
+        ]
+    }
+}

@@ -1,0 +1,18 @@
+{
+  "name": "cool-shortcode",
+  "description": "Built with WDS-Shortcodes (and Shortcode_Button), this plugin demonstrates the capabilites of those libraries.",
+  "license": "GPLv2",
+  "authors": [
+    "WebDevStudios"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}
