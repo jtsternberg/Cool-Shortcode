@@ -8,14 +8,6 @@
 class CS_Run extends WDS_Shortcodes {
 
 	/**
-	 * Parent plugin class
-	 *
-	 * @var   class
-	 * @since NEXT
-	 */
-	protected $plugin = null;
-
-	/**
 	 * The Shortcode Tag
 	 * @var string
 	 */
@@ -26,8 +18,8 @@ class CS_Run extends WDS_Shortcodes {
 	 * @var array
 	 */
 	public $atts_defaults = array(
-		'extra_class'      => 'large',
 		'background_color' => '#bada55',
+		'extra_class'      => 'large',
 	);
 
 	/**
