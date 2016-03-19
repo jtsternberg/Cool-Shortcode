@@ -4,9 +4,64 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9de39813e2ceeb460b4306eb931ed231",
-    "content-hash": "5875744c55b958bbaf84d4ba3fabe71f",
+    "hash": "28de1c696cddb932c65f35906854a3f8",
+    "content-hash": "23767a53ea28b4e7269c30061b15fb95",
     "packages": [
+        {
+            "name": "tgmpa/tgm-plugin-activation",
+            "version": "2.5.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/TGMPA/TGM-Plugin-Activation.git",
+                "reference": "ba41c10e821a10d3d6c3b8e468a16716bb03f125"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/TGMPA/TGM-Plugin-Activation/zipball/ba41c10e821a10d3d6c3b8e468a16716bb03f125",
+                "reference": "ba41c10e821a10d3d6c3b8e468a16716bb03f125",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "class-tgm-plugin-activation.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Thomas Griffin",
+                    "homepage": "http://thomasgriffinmedia.com",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Gary Jones",
+                    "homepage": "https://github.com/GaryJones",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Juliette Reinders Folmer",
+                    "homepage": "https://github.com/jrfnl",
+                    "role": "Developer"
+                }
+            ],
+            "description": "TGM Plugin Activation is a PHP library that allows you to easily require or recommend plugins for your WordPress themes (and plugins).",
+            "homepage": "http://tgmpluginactivation.com",
+            "keywords": [
+                "activation",
+                "library",
+                "plugins",
+                "theme",
+                "wordpress"
+            ],
+            "time": "2015-07-16 08:59:11"
+        },
         {
             "name": "xrstf/composer-php52",
             "version": "dev-default",
