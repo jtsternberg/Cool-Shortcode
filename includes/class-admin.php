@@ -18,6 +18,7 @@ class CS_Admin extends WDS_Shortcode_Admin {
 			'button_tooltip' => __( 'Be Cool!', 'cool-shortcode' ),
 			'icon'           => 'dashicons-thumbs-up',
 			'include_close'  => true,
+			// 'mceView'        => true, // The future
 		);
 	}
 
@@ -32,17 +33,26 @@ class CS_Admin extends WDS_Shortcode_Admin {
 	function fields( $fields, $button_data ) {
 		$fields[] = array(
 			'name'    => __( 'Background Color', 'cool-shortcode' ),
-			'desc'    => __( 'background color for "be cool" box.', 'cool-shortcode' ),
-			'type'    => 'color',
+			'desc'    => __( 'Background color for "be cool" box.', 'cool-shortcode' ),
+			'type'    => 'colorpicker',
 			'id'      => 'background_color',
 			'default' => $this->atts_defaults['background_color'],
 		);
 
 		$fields[] = array(
-			'name' => __( 'Extra CSS Classes', 'cool-shortcode' ),
+			'name'    => __( 'Text Color', 'cool-shortcode' ),
+			'desc'    => __( 'Text color for "be cool" box.', 'cool-shortcode' ),
+			'type'    => 'colorpicker',
+			'id'      => 'text_color',
+			'default' => $this->atts_defaults['text_color'],
+		);
+
+		$fields[] = array(
+			'name'    => __( 'Extra CSS Classes', 'cool-shortcode' ),
 			'desc'    => __( 'Enter classes separated by spaces (e.g. "class1 class2")', 'cool-shortcode' ),
-			'type' => 'text',
-			'id'   => 'extra_class',
+			'type'    => 'text',
+			'id'      => 'extra_class',
+			'default' => $this->atts_defaults['extra_class'],
 		);
 
 		return $fields;

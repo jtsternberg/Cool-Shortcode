@@ -129,8 +129,6 @@ class Cool_Shortcode {
 		$this->basename = plugin_basename( __FILE__ );
 		$this->url      = plugin_dir_url( __FILE__ );
 		$this->path     = plugin_dir_path( __FILE__ );
-
-		$this->plugin_classes();
 	}
 
 	/**
@@ -143,7 +141,7 @@ class Cool_Shortcode {
 		// Attach other plugin classes to the base plugin class.
 		$this->run = new CS_Run();
 		$this->admin = new CS_Admin(
-			$this->run,
+			$this->run->shortcode,
 			self::VERSION,
 			$this->run->atts_defaults
 		);
@@ -157,11 +155,16 @@ class Cool_Shortcode {
 	 */
 	public function hooks() {
 
+		$this->plugin_classes();
+
 		add_action( 'init', array( $this, 'init' ) );
 
 		if ( ! defined( 'WDS_SHORTCODES_LOADED' ) ) {
 			add_action( 'tgmpa_register', array( $this, 'register_required_plugin' ) );
 		}
+
+		$this->run->hooks();
+		$this->admin->hooks();
 	}
 
 	/**
@@ -290,5 +293,5 @@ function cool_shortcode() {
 // Kick it off.
 add_action( 'plugins_loaded', array( cool_shortcode(), 'hooks' ) );
 
-register_activation_hook( __FILE__, array( cool_shortcode(), '_activate' ) );
-register_deactivation_hook( __FILE__, array( cool_shortcode(), '_deactivate' ) );
+register_activation_hook( __FILE__, array( 'Cool_Shortcode', '_activate' ) );
+register_deactivation_hook( __FILE__, array( 'Cool_Shortcode', '_deactivate' ) );
