@@ -91,6 +91,14 @@ class Cool_Shortcode {
 	protected static $single_instance = null;
 
 	/**
+	 * Instance of CS_Run
+	 *
+	 * @since NEXT
+	 * @var CS_Run
+	 */
+	protected $run;
+
+	/**
 	 * Creates or returns an instance of this class.
 	 *
 	 * @since  NEXT
@@ -125,7 +133,7 @@ class Cool_Shortcode {
 	 */
 	public function plugin_classes() {
 		// Attach other plugin classes to the base plugin class.
-		// $this->plugin_class = new CS_Plugin_Class( $this );
+		$this->run = new CS_Run( $this );
 	} // END OF PLUGIN CLASSES FUNCTION
 
 	/**
@@ -246,6 +254,7 @@ class Cool_Shortcode {
 			case 'basename':
 			case 'url':
 			case 'path':
+			case 'run':
 				return $this->$field;
 			default:
 				throw new Exception( 'Invalid '. __CLASS__ .' property: ' . $field );
