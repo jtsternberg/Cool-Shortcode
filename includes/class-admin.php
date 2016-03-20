@@ -17,8 +17,8 @@ class CS_Admin extends WDS_Shortcode_Admin {
 			'qt_button_text' => __( 'Be Cool!', 'cool-shortcode' ),
 			'button_tooltip' => __( 'Be Cool!', 'cool-shortcode' ),
 			'icon'           => 'dashicons-thumbs-up',
-			'include_close'  => true,
-			// 'mceView'        => true, // The future
+			// 'include_close'  => true,
+			'mceView'        => true, // The future
 		);
 	}
 
@@ -31,6 +31,13 @@ class CS_Admin extends WDS_Shortcode_Admin {
 	 * @return array
 	 */
 	function fields( $fields, $button_data ) {
+		$fields[] = array(
+			'name'    => __( 'Say something cool', 'cool-shortcode' ),
+			'type'    => 'text',
+			'id'      => 'cool_text',
+			'default' => $this->atts_defaults['cool_text'],
+		);
+
 		$fields[] = array(
 			'name'    => __( 'Background Color', 'cool-shortcode' ),
 			'desc'    => __( 'Background color for "be cool" box.', 'cool-shortcode' ),

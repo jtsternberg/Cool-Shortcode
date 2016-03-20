@@ -18,6 +18,7 @@ class CS_Run extends WDS_Shortcodes {
 	 * @var array
 	 */
 	public $atts_defaults = array(
+		'cool_text'        => 'Your cool text',
 		'background_color' => '#bada55',
 		'text_color'       => '#555555',
 		'extra_class'      => 'large',
@@ -35,6 +36,7 @@ class CS_Run extends WDS_Shortcodes {
 	public function shortcode() {
 
 		$style = '';
+
 		if ( $this->att( 'background_color' ) || $this->att( 'text_color' ) ) {
 			$style = ' style="';
 			// Get/check our background_color attribute
@@ -57,7 +59,11 @@ class CS_Run extends WDS_Shortcodes {
 		$output = '';
 		$output .= $this->css();
 		$output .= '<blockquote class="becool-shortcode dashicons-before dashicons-thumbs-up' . $extra_class . '"' . $style . '>';
-		$output .= $this->content();
+		$output .= wp_kses_post( $this->att( 'cool_text' ) );
+
+		// if include_close was true in CS_Admin::js_button_data, we could use $this->content()
+		// to get contents between shortcode open/close
+		// $this->content();
 		$output .= '</blockquote>';
 
 		return $output;
