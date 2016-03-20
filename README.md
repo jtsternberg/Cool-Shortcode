@@ -1,16 +1,16 @@
 # Cool Shortcode #
-**Contributors:**      WebDevStudios
-**Donate link:**       http://webdevstudios.com
-**Tags:**
-**Requires at least:** 4.4
-**Tested up to:**      4.4
-**Stable tag:**        0.0.0
-**License:**           GPLv2
-**License URI:**       http://www.gnu.org/licenses/gpl-2.0.html
+**Contributors:**      WebDevStudios  
+**Donate link:**       http://webdevstudios.com  
+**Tags:**  
+**Requires at least:** 4.4  
+**Tested up to:**      4.4  
+**Stable tag:**        0.0.0  
+**License:**           GPLv2  
+**License URI:**       http://www.gnu.org/licenses/gpl-2.0.html  
 
 ## Description ##
 
-Built with WDS-Shortcodes (and Shortcode_Button), this plugin demonstrates the capabilites of those libraries.
+Built with [WDS-Shortcodes](https://github.com/WebDevStudios/WDS-Shortcodes) (which is built with [Shortcode_Button](https://github.com/jtsternberg/Shortcode_Button)), this plugin demonstrates the capabilites of those libraries.
 
 ## Installation ##
 
@@ -24,6 +24,20 @@ Built with WDS-Shortcodes (and Shortcode_Button), this plugin demonstrates the c
 
 ## Screenshots ##
 
+![button](.png)
+*Button*
+
+![button-click-show-modal](.png)
+*Click button and open modal*
+
+![button-click-show-modal](.png)
+*Submitted form inserts shortcode, and we show a live preview*
+
+![Click on preview to get edit controls](.png)
+*Click on preview to get edit controls*
+
+![Generated shortcode in html mode (the html mode button is visible also)](.png)
+*Generated shortcode in html mode (the html mode button is visible also)*
 
 ## Changelog ##
 
