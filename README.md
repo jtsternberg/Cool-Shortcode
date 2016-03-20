@@ -24,19 +24,19 @@ Built with [WDS-Shortcodes](https://github.com/WebDevStudios/WDS-Shortcodes) (wh
 
 ## Screenshots ##
 
-![button](.png)
+![button](https://raw.githubusercontent.com/jtsternberg/Cool-Shortcode/master/screenshot-1.png)
 *Button*
 
-![button-click-show-modal](.png)
+![button-click-show-modal](https://raw.githubusercontent.com/jtsternberg/Cool-Shortcode/master/screenshot-2.png)
 *Click button and open modal*
 
-![button-click-show-modal](.png)
+![button-click-show-modal](https://raw.githubusercontent.com/jtsternberg/Cool-Shortcode/master/screenshot-3.png)
 *Submitted form inserts shortcode, and we show a live preview*
 
-![Click on preview to get edit controls](.png)
+![Click on preview to get edit controls](https://raw.githubusercontent.com/jtsternberg/Cool-Shortcode/master/screenshot-4.png)
 *Click on preview to get edit controls*
 
-![Generated shortcode in html mode (the html mode button is visible also)](.png)
+![Generated shortcode in html mode (the html mode button is visible also)](https://raw.githubusercontent.com/jtsternberg/Cool-Shortcode/master/screenshot-5.png)
 *Generated shortcode in html mode (the html mode button is visible also)*
 
 ## Changelog ##
