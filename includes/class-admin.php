@@ -62,6 +62,30 @@ class CS_Admin extends WDS_Shortcode_Admin {
 			'default' => $this->atts_defaults['extra_class'],
 		);
 
+		$fields[] = array(
+			'name'        => __( 'Add a cool blogroll', 'cool-shortcode' ),
+			'id'          => 'linkslist',
+			'type'        => 'group',
+			'options'     => array(
+				'group_title'    => __( 'Link {#}', 'cool-shortcode' ),
+				'add_button'     => __( 'Add Another Link', 'cool-shortcode' ),
+				'remove_button'  => __( 'Remove Link', 'cool-shortcode' ),
+				'closed'      => true, // true to keep the groups closed by default
+			),
+			'fields' => array(
+				array(
+					'name' => __( 'Link text', 'cool-shortcode' ),
+					'id'   => 'text',
+					'type' => 'text',
+				),
+				array(
+					'name' => __( 'Link URL', 'cool-shortcode' ),
+					'id'   => 'url',
+					'type' => 'text_url',
+				),
+			),
+		);
+
 		return $fields;
 	}
 }

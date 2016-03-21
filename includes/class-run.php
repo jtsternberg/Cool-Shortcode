@@ -22,6 +22,7 @@ class CS_Run extends WDS_Shortcodes {
 		'background_color' => '#bada55',
 		'text_color'       => '#555555',
 		'extra_class'      => 'large',
+		'linkslist'        => '',
 	);
 
 	/**
@@ -60,6 +61,18 @@ class CS_Run extends WDS_Shortcodes {
 		$output .= $this->css();
 		$output .= '<blockquote class="becool-shortcode dashicons-before dashicons-thumbs-up' . $extra_class . '"' . $style . '>';
 		$output .= wp_kses_post( $this->att( 'cool_text' ) );
+
+		if ( $this->att( 'linkslist' ) ) {
+			$output .= '<ul>';
+			foreach ( (array) $this->att( 'linkslist' ) as $link ) {
+				$output .= sprintf(
+					'<li><a href="%s">%s</a></li>',
+					$link['url'],
+					$link['text']
+				);
+			}
+			$output .= '</ul>';
+		}
 
 		// if include_close was true in CS_Admin::js_button_data, we could use $this->content()
 		// to get contents between shortcode open/close
