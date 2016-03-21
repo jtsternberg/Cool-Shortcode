@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# bash bin/install-wp-tests.sh wordpress_test root '' localhost latest
 
 if [ $# -lt 3 ]; then
 	echo "usage: $0 <db-name> <db-user> <db-pass> [db-host] [wp-version]"
@@ -87,6 +88,11 @@ install_test_suite() {
 
 }
 
+install_required_plugins() {
+	download https://raw.githubusercontent.com/WebDevStudios/WDS-Shortcodes/master/wds-shortcodes.zip /tmp/wds-shortcodes.zip
+	unzip /tmp/wds-shortcodes.zip -d $WP_CORE_DIR/wp-content/plugins/wds-shortcodes
+}
+
 install_db() {
 	# parse DB_HOST for port or socket references
 	local PARTS=(${DB_HOST//\:/ })
@@ -110,4 +116,5 @@ install_db() {
 
 install_wp
 install_test_suite
+install_required_plugins
 install_db
