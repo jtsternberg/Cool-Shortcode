@@ -12,6 +12,8 @@
 
 Built with [WDS-Shortcodes](https://github.com/WebDevStudios/WDS-Shortcodes) (which is built with [Shortcode_Button](https://github.com/jtsternberg/Shortcode_Button)), this plugin demonstrates the capabilites of those libraries.
 
+For more info, [check out the wiki](https://github.com/WebDevStudios/WDS-Shortcodes/wiki) for the WDS-Shortcodes library.
+
 ## Installation ##
 
 ### Manual Installation ###
