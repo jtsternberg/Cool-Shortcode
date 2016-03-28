@@ -3,7 +3,7 @@
  * Plugin Name: Cool Shortcode
  * Plugin URI:  http://webdevstudios.com
  * Description: Built with WDS-Shortcodes (and Shortcode_Button), this plugin demonstrates the capabilites of those libraries.
- * Version:     0.0.0
+ * Version:     0.1.0
  * Author:      WebDevStudios
  * Author URI:  http://webdevstudios.com
  * Donate link: http://webdevstudios.com
@@ -38,11 +38,10 @@
 // User composer autoload.
 require 'vendor/autoload_52.php';
 
-
 /**
  * Main initiation class
  *
- * @since  NEXT
+ * @since  0.0.0
  * @var  string $version  Plugin version
  * @var  string $basename Plugin basename
  * @var  string $url      Plugin URL
@@ -54,15 +53,15 @@ class Cool_Shortcode {
 	 * Current version
 	 *
 	 * @var  string
-	 * @since  NEXT
+	 * @since  0.0.0
 	 */
-	const VERSION = '0.0.0';
+	const VERSION = '0.1.0';
 
 	/**
 	 * URL of plugin directory
 	 *
 	 * @var string
-	 * @since  NEXT
+	 * @since  0.0.0
 	 */
 	protected $url = '';
 
@@ -70,7 +69,7 @@ class Cool_Shortcode {
 	 * Path of plugin directory
 	 *
 	 * @var string
-	 * @since  NEXT
+	 * @since  0.0.0
 	 */
 	protected $path = '';
 
@@ -78,7 +77,7 @@ class Cool_Shortcode {
 	 * Plugin basename
 	 *
 	 * @var string
-	 * @since  NEXT
+	 * @since  0.0.0
 	 */
 	protected $basename = '';
 
@@ -86,14 +85,14 @@ class Cool_Shortcode {
 	 * Singleton instance of plugin
 	 *
 	 * @var Cool_Shortcode
-	 * @since  NEXT
+	 * @since  0.0.0
 	 */
 	protected static $single_instance = null;
 
 	/**
 	 * Instance of CS_Run
 	 *
-	 * @since NEXT
+	 * @since 0.0.0
 	 * @var CS_Run
 	 */
 	protected $run;
@@ -101,7 +100,7 @@ class Cool_Shortcode {
 	/**
 	 * Instance of CS_Admin
 	 *
-	 * @since NEXT
+	 * @since 0.0.0
 	 * @var CS_Admin
 	 */
 	protected $admin;
@@ -109,7 +108,7 @@ class Cool_Shortcode {
 	/**
 	 * Creates or returns an instance of this class.
 	 *
-	 * @since  NEXT
+	 * @since  0.0.0
 	 * @return Cool_Shortcode A single instance of this class.
 	 */
 	public static function get_instance() {
@@ -123,7 +122,7 @@ class Cool_Shortcode {
 	/**
 	 * Sets up our plugin
 	 *
-	 * @since  NEXT
+	 * @since  0.0.0
 	 */
 	protected function __construct() {
 		$this->basename = plugin_basename( __FILE__ );
@@ -134,23 +133,18 @@ class Cool_Shortcode {
 	/**
 	 * Attach other plugin classes to the base plugin class.
 	 *
-	 * @since  NEXT
+	 * @since  0.0.0
 	 * @return void
 	 */
 	public function plugin_classes() {
 		// Attach other plugin classes to the base plugin class.
 		$this->run = new CS_Run();
-		$this->admin = new CS_Admin(
-			$this->run->shortcode,
-			self::VERSION,
-			$this->run->atts_defaults
-		);
 	} // END OF PLUGIN CLASSES FUNCTION
 
 	/**
 	 * Add hooks and filters
 	 *
-	 * @since  NEXT
+	 * @since  0.0.0
 	 * @return void
 	 */
 	public function hooks() {
@@ -164,7 +158,6 @@ class Cool_Shortcode {
 		}
 
 		$this->run->hooks();
-		$this->admin->hooks();
 	}
 
 	/**
@@ -228,7 +221,7 @@ class Cool_Shortcode {
 	/**
 	 * Activate the plugin
 	 *
-	 * @since  NEXT
+	 * @since  0.0.0
 	 * @return void
 	 */
 	public function _activate() {
@@ -240,7 +233,7 @@ class Cool_Shortcode {
 	 * Deactivate the plugin
 	 * Uninstall routines should be in uninstall.php
 	 *
-	 * @since  NEXT
+	 * @since  0.0.0
 	 * @return void
 	 */
 	public function _deactivate() {}
@@ -248,17 +241,24 @@ class Cool_Shortcode {
 	/**
 	 * Init hooks
 	 *
-	 * @since  NEXT
+	 * @since  0.0.0
 	 * @return void
 	 */
 	public function init() {
 		load_plugin_textdomain( 'cool-shortcode', false, dirname( $this->basename ) . '/languages/' );
+
+		$this->admin = new CS_Admin(
+			$this->run->shortcode,
+			self::VERSION,
+			$this->run->atts_defaults
+		);
+		$this->admin->hooks();
 	}
 
 	/**
 	 * Magic getter for our object.
 	 *
-	 * @since  NEXT
+	 * @since  0.0.0
 	 * @param string $field Field to get.
 	 * @throws Exception Throws an exception if the field is invalid.
 	 * @return mixed
@@ -283,7 +283,7 @@ class Cool_Shortcode {
  * Grab the Cool_Shortcode object and return it.
  * Wrapper for Cool_Shortcode::get_instance()
  *
- * @since  NEXT
+ * @since  0.0.0
  * @return Cool_Shortcode  Singleton instance of plugin class.
  */
 function cool_shortcode() {
@@ -291,7 +291,7 @@ function cool_shortcode() {
 }
 
 // Kick it off.
-add_action( 'plugins_loaded', array( cool_shortcode(), 'hooks' ) );
+add_action( 'wds_shortcodes_loaded', array( cool_shortcode(), 'hooks' ) );
 
 register_activation_hook( __FILE__, array( 'Cool_Shortcode', '_activate' ) );
 register_deactivation_hook( __FILE__, array( 'Cool_Shortcode', '_deactivate' ) );

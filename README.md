@@ -4,7 +4,7 @@
 **Tags:**  
 **Requires at least:** 4.4  
 **Tested up to:**      4.4  
-**Stable tag:**        0.0.0  
+**Stable tag:**        0.1.0  
 **License:**           GPLv2  
 **License URI:**       http://www.gnu.org/licenses/gpl-2.0.html  
 
@@ -44,6 +44,9 @@ For more info, [check out the wiki](https://github.com/WebDevStudios/WDS-Shortco
 *Generated shortcode in html mode (the html mode button is visible also)*
 
 ## Changelog ##
+
+### 0.1.0 ###
+* Update to work with new WDS-Shortcodes structure (can not extend the `WDS_Shortcode_Admin` class before the `'init'` hook).
 
 ### 0.0.0 ###
 * First release
